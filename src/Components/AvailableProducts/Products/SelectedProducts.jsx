@@ -1,9 +1,11 @@
 import React from "react";
+import Products from "./Products";
+import Card from "../../Cards/Card";
 
-const SelectedProducts = () => {
+const SelectedProducts = ({ product }) => {
   return (
-    <div>
-      <h2>Your Cart</h2>
+    <div className="mb-10">
+      Selected Products
     </div>
   );
 };

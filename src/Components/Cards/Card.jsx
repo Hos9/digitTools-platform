@@ -1,6 +1,5 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-import design from "../../assets/products/design-tool.png";
 
 const Card = ({ product }) => {
   return (
