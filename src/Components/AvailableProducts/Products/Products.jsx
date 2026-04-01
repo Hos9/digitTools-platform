@@ -43,7 +43,10 @@ const Products = ({ productsPromise }) => {
           setSelectedProducts={setSelectedProducts}
         />
       ) : (
-        <SelectedProducts selectedProducts={selectedProducts} />
+        <SelectedProducts
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        />
       )}
     </div>
   );

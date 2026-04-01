@@ -23,7 +23,7 @@ const Card = ({ product, selectedProducts, setSelectedProducts }) => {
           <div className="">
             <img
               src={product.icon}
-              className="mb-4 border-2 rounded-full p-3 border-gray-300"
+              className="mb-4 border-2 rounded-full p-1 border-gray-300 size-15"
               alt=""
             />
             <h2 className="text-3xl font-bold mb-4">{product.name}</h2>

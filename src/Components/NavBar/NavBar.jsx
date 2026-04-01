@@ -2,7 +2,7 @@ import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import SelectedProducts from "../AvailableProducts/Products/SelectedProducts";
 
-const NavBar = () => {
+const NavBar = ({ selectedProducts }) => {
   return (
     <div className="mx-auto w-11/12 py-5 items-center">
       <div className="navbar bg-base-100 shadow-sm">
@@ -71,9 +71,12 @@ const NavBar = () => {
         </div>
         <div className="navbar-end flex gap-3">
           <div className="indicator">
-            <span className="indicator-item badge badge-secondary">
-              6
-            </span>
+            {selectedProducts.length > 0 && (
+              <span className="indicator-item badge badge-secondary">
+                {selectedProducts.length}
+              </span>
+            )}
+
             <button className="btn btn-ghost">
               <FiShoppingCart />
             </button>

@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Hero from "./Components/Hero/Hero";
 import Notify from "./Components/NavBar/Menu/Notify";
@@ -15,9 +15,14 @@ const fetchProduct = async () => {
 function App() {
   const productsPromise = fetchProduct();
 
+  const [selectedProducts, setSelectedProducts] = useState([]);
+
   return (
     <>
-      <NavBar />
+      <NavBar
+        selectedProducts={selectedProducts}
+        setSelectedProducts={setSelectedProducts}
+      />
       <Hero />
       <Notify />
       <Stat />
