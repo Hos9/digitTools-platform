@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 
 const Card = ({ product, selectedProducts, setSelectedProducts }) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isBuy, setIsBuy] = useState(false);
 
   const handleBuyNow = () => {
-    setSelectedProducts([...(selectedProducts + product)]);
+    setIsBuy(true);
+    setSelectedProducts([...selectedProducts, product]);
   };
 
   return (
     <div className="">
-      <div className="card w-11/12 mx-auto bg-base-100 shadow-sm space-y-4 border-2 border-gray-100">
+      <div
+        className={`card w-11/12 mx-auto bg-base-100 shadow-sm space-y-4 border-2 ${isBuy ? "border-4 border-green-500" : "border-gray-100 "} hover:scale-105`}
+      >
         <div className="card-body relative">
           <span
             className={`badge badge-md opacity-50 ${product.tag === "best seller" ? "badge-warning" : product.tag === "popular" ? "badge-primary" : "badge-success"}  absolute right-5 top-2`}
@@ -45,8 +48,11 @@ const Card = ({ product, selectedProducts, setSelectedProducts }) => {
             </li>
           </ul>
           <div className="mt-6">
-            <button className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] btn-block rounded-4xl text-white">
-              Buy Now
+            <button
+              onClick={handleBuyNow}
+              className={`btn ${isBuy ? "bg-linear-to-r from-blue-500 to-green-500" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"}  btn-block rounded-4xl text-white`}
+            >
+              {isBuy ? "Added to Cart" : "Buy Now"}
             </button>
           </div>
         </div>
