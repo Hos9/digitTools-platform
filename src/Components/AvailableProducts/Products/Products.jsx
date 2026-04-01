@@ -8,6 +8,9 @@ const Products = ({ productsPromise }) => {
   const [selectedType, setSelectedType] = useState("products");
   console.log(selectedType, "selectedType");
 
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  console.log(selectedProducts, "selectedProducts");
+
   return (
     <div>
       <div className="text-center mb-10">
@@ -28,15 +31,19 @@ const Products = ({ productsPromise }) => {
             onClick={() => setSelectedType("cart")}
             className={`btn rounded-4xl shadow-xl ${selectedType === "cart" ? "text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]" : ""}`}
           >
-            Cart (2)
+            Cart ({selectedProducts.length})
           </button>
         </div>
       </div>
 
       {selectedType === "products" ? (
-        <AvailableProducts products={products} />
+        <AvailableProducts
+          products={products}
+          selectedProducts={selectedProducts}
+          setSelectedProducts={setSelectedProducts}
+        />
       ) : (
-        <SelectedProducts />
+        <SelectedProducts selectedProducts={selectedProducts} />
       )}
     </div>
   );

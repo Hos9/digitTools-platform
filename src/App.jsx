@@ -5,6 +5,7 @@ import Notify from "./Components/NavBar/Menu/Notify";
 import NavBar from "./Components/NavBar/NavBar";
 import Stat from "./Components/Stat/Stat";
 import Products from "./Components/AvailableProducts/Products/Products";
+import SelectedProducts from "./Components/AvailableProducts/Products/SelectedProducts";
 
 const fetchProduct = async () => {
   const res = await fetch("/data.json");

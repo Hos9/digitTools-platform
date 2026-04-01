@@ -1,5 +1,6 @@
 import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import SelectedProducts from "../AvailableProducts/Products/SelectedProducts";
 
 const NavBar = () => {
   return (
@@ -70,7 +71,9 @@ const NavBar = () => {
         </div>
         <div className="navbar-end flex gap-3">
           <div className="indicator">
-            <span className="indicator-item badge badge-secondary">12</span>
+            <span className="indicator-item badge badge-secondary">
+              6
+            </span>
             <button className="btn btn-ghost">
               <FiShoppingCart />
             </button>

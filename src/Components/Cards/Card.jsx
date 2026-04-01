@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 
-const Card = ({ product }) => {
+const Card = ({ product, selectedProducts, setSelectedProducts }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleBuyNow = () => {
+    setSelectedProducts([...(selectedProducts + product)]);
+  };
+
   return (
     <div className="">
       <div className="card w-11/12 mx-auto bg-base-100 shadow-sm space-y-4 border-2 border-gray-100">
         <div className="card-body relative">
-          <span className="badge badge-xs badge-warning absolute right-5 top-2">
+          <span
+            className={`badge badge-md opacity-50 ${product.tag === "best seller" ? "badge-warning" : product.tag === "popular" ? "badge-primary" : "badge-success"}  absolute right-5 top-2`}
+          >
             {product.tag}
           </span>
           <div className="">
