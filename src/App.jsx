@@ -6,6 +6,8 @@ import NavBar from "./Components/NavBar/NavBar";
 import Stat from "./Components/Stat/Stat";
 import Products from "./Components/AvailableProducts/Products/Products";
 import SelectedProducts from "./Components/AvailableProducts/Products/SelectedProducts";
+import Steps from "./Components/Steps/Steps";
+import Pricing from "./Components/Pricing/pricing";
 
 const fetchProduct = async () => {
   const res = await fetch("/data.json");
@@ -31,6 +33,8 @@ function App() {
       >
         <Products productsPromise={productsPromise} />
       </Suspense>
+      <Steps />
+      <Pricing />
     </>
   );
 }
