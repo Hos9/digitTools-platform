@@ -13,8 +13,8 @@ const Pricing = () => {
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-6">
-          <div className="border-2 border-gray-300 rounded-4xl p-5">
+        <div className="card-container grid grid-cols-3 gap-6 items-stretch">
+          <div className="card border-2 border-gray-300 rounded-4xl p-5">
             <h3 className="font-bold text-2xl">Starter</h3>
             <p className="">Perfect for getting started</p>
             <h2 className="py-6">
@@ -51,7 +51,7 @@ const Pricing = () => {
             </button>
           </div>
 
-          <div className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white border-2 border-gray-300 rounded-4xl p-5">
+          <div className="h-full card bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white border-2 border-gray-300 rounded-4xl p-5">
             <h3 className="font-bold text-2xl">Pro</h3>
             <p className="">Best for professionals</p>
             <h2 className="py-6">

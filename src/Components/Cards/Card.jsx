@@ -14,7 +14,7 @@ const Card = ({ product, selectedProducts, setSelectedProducts }) => {
       <div
         className={`card w-11/12 mx-auto bg-base-100 shadow-sm space-y-4 border-2 ${isBuy ? "border-4 border-green-500" : "border-gray-100 "} hover:scale-105`}
       >
-        <div className="card-body relative">
+        <div className="card-body relative h-full items-stretch">
           <span
             className={`badge badge-md opacity-50 ${product.tag === "best seller" ? "badge-warning" : product.tag === "popular" ? "badge-primary" : "badge-success"}  absolute right-5 top-2`}
           >
