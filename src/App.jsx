@@ -26,7 +26,6 @@ function App() {
         setSelectedProducts={setSelectedProducts}
       />
       <Hero />
-      <Notify />
       <Stat />
       <Suspense
         fallback={<span className="loading loading-bars loading-xl"></span>}
